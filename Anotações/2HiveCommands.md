@@ -38,6 +38,7 @@ tblproperties("skipp.header.line.count"="<numero de linhas>")
 
 # Exemplo tabela externa
 
+```
 create external table user(
     id int, 
     name string,
@@ -48,3 +49,4 @@ fields terminated by '\t'
 lines terminated by '\n'
 stored as textfile
 location '/user;cloudera/data/client'
+```
