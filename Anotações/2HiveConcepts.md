@@ -1,5 +1,5 @@
 # Hive
-
+```
 Outras ferramentas para análise de dados:
 
 - Hive
@@ -11,9 +11,9 @@ Hive permite acesso aos dados via SQL
     Data Warehouse construído em cima do Hadoop
 
 Ótimo para realizar particionamentos de tabelas
-
+```
 ## Componentes do Hive
-
+```
 - HCatalog
 
 Camada de gerenciamento para o hadoop
@@ -35,9 +35,9 @@ Todos os metadados das tabelas e partições do Hive são acessados através do 
 
 Cliente Hive
 Faz uso de JDBC para se conectar ao HiveServer2
-
+```
 ## Formatos de arquivos
-
+```
 Conector para vários formatos
 
 - Txt, csv
@@ -46,19 +46,19 @@ Conector para vários formatos
 - Avro
 
 Não existe formato hive
-
+```
 ## Estrutura dos dados
-
+```
 Database -> table -> partition -> bucket
 
 exemplo de caminho: /user/hive/warehouse/banco.db/data=010119/000000_0
-
+```
 ## HiveQL
-
+```
 Instruções SQL são transformadas internamente em Jobs de MapReduce
-
+```
 ## Tabelas Hive
-
+```
 Dois tipos:
 
 - Internas 
