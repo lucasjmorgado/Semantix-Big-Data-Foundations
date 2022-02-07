@@ -50,3 +50,68 @@ lines terminated by '\n'
 stored as textfile
 location '/user;cloudera/data/client'
 ```
+
+## Inserir dados
+```
+insert into table <nomeTabela> partition(<partition>='<value>') values(<campo>,<value>);
+
+insert into users partition(data=now())values(10,'rodrigo');
+```
+
+## Carregar dados no sistema de arquivos local
+```
+load data inpath <diretorio> into table <nomeTabela>;
+
+load data local inpath '/home/cloudera/data/test' into alunos; -> arquivos máquina local
+
+load data inpath '/home/cloudera/data/test' into alunos; -> arquivos dentro do hdfs
+```
+
+## Create view
+```
+create view <nomeView> as select * from nome_table;
+```
+
+## Create Particionamento
+
+```
+- Partitioned by (<campo><type>)
+- Bucket -> clustered by (<campo>) into <qtd> buckets;
+
+Ex:
+create table user(
+    id int, 
+    name string, 
+    age int
+)
+partitioned by (data string)
+clustered by (id) into 4 buckets;
+```
+- Particionamento estático
+```
+alter table logs add partition(data='2019-01-01')
+```
+- Particionamento dinâmico
+```
+insert overwrite table user_cidade partition (cidade) select * from user;
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode = nonstrict;
+```
+
+## Comandos Partição
+- Visualizar partições de uma tabela
+```
+show partitions user;
+```
+- Excluir partições de uma tabela
+```
+alter table user drop partition (city='SP');
+```
+- Alterar nome de partição de uma tabela
+```
+alter table user partition city rename to partiton state;
+```
+- Reparar partições que foram alteradas no HDFS
+```
+msck rapair table <nomeTabela>; 
+```

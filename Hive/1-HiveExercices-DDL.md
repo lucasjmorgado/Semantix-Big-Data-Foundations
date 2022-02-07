@@ -56,5 +56,6 @@ tblproperties("skip.header.line.count"="1");
 ## 5. Visualizar a descrição da tabela pop
 
 ```
+desc pop;
 desc formatted pop;
 ```
