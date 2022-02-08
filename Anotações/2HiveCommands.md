@@ -48,7 +48,7 @@ row format delimited
 fields terminated by '\t'
 lines terminated by '\n'
 stored as textfile
-location '/user;cloudera/data/client'
+location '/user/cloudera/data/client'
 ```
 
 ## Inserir dados
