@@ -11,6 +11,6 @@ Abaixo listo tecnologias estudadas e seus respectivos diretórios
 
 - [Exercício Hadoop](https://github.com/lucasjmorgado/Semantix-Big-Data-Foundations/blob/main/Hadoop/1-HadoopExercises.md)
 
-## Hive
+## Hive 
 
 - [Exercícios Hive](https://github.com/lucasjmorgado/Semantix-Big-Data-Foundations/tree/main/Hive)
