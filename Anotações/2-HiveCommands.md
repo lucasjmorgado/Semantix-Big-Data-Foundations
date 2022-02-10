@@ -115,3 +115,50 @@ alter table user partition city rename to partiton state;
 ```
 msck rapair table <nomeTabela>; 
 ```
+
+## Stored as
+```
+stored as <fileType>
+TEXTFILE
+ORC
+PARQUET
+AVRO
+JSONFILE
+```
+
+## TIpos de compressão
+```
+Se o arquivo mapred-site.xml não estiver configurado pode setar manualmente
+hive> SET hive.exec.compress.output=true;
+hive> SET mapred.output.compression.codec= codec;
+hive> SET mapred.output.compression.type=BLOCK;
+
+- Codec:
+
+gzip: org.apache.hadoop.io.compress.GzipCodec
+bzip2: org.apache.hadoop.io.compress.BZip2Codec
+LZO: com.hadoop.compression.lzo.LzopCodec
+Snappy: org.apache.hadoop.io.compress.SnappyCodec
+Deflate: org.apache.hadoop.io.compress.DeflateCodec
+
+Adicionar o parâmetro compress em tblproperties na criação da tabela
+
+stored as <formatoArquivo> tblproperties(' formatoArquivo.compress’=‘<CompressaoArquivo>’);
+
+- GZIP
+- BZIP2
+- LZO
+- SNAPPY
+- DEFLATE
+```
+## Exemplo tabela com partição e compmressão
+```
+create table user(
+id int,
+name String,
+age int
+)
+partitioned by (data String)
+clustered by (id) into 256 buckets
+stored as parquet tblproperties('parquet.compress'='SNAPPY');
+```
