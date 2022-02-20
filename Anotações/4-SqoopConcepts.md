@@ -31,3 +31,20 @@ Exportar dados
 
 MySQL -> Sqoop Client -> MapReduce -> HDFS/Hive/HBase
 ```
+
+## Armazenamento padrão Sqoop
+```
+/user/username/tablename
+```
+
+## Jobs
+```
+Salva os comandos de importação e exportação
+Importação incremental
+```
+
+## Carga Incremental
+```
+Append - Anexa todos os dados ou apenas os novos
+```
+
