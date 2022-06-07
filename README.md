@@ -14,3 +14,7 @@ Abaixo listo tecnologias estudadas e seus respectivos diretórios
 ## Hive 
 
 - [Exercícios Hive](https://github.com/lucasjmorgado/Semantix-Big-Data-Foundations/tree/main/Hive)
+
+## MongoDB
+
+- [Exercícios Hive](https://github.com/lucasjmorgado/Semantix-Big-Data-Foundations/tree/main/Semantix-mongoDB)
